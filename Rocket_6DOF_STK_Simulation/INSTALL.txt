@@ -1,0 +1,1 @@
+Place this folder somewhere and open MATLAB. Run setup.m from the project root.

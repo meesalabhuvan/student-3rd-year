@@ -75,13 +75,8 @@ class STKAutomation:
                 writer.writerow([start_times[i], stop_times[i], durations[i]])
 
         print(f"[OK] Saved access report: {file_path}")
-
-
-
-
-# ----------------------------------------------------------
-#                      MAIN PROGRAM
-# ----------------------------------------------------------
+        
+#main function
 
 if __name__ == "__main__":
     print("\n===== STK AUTOMATION STARTED =====\n")
@@ -94,3 +89,4 @@ if __name__ == "__main__":
     stk.save_access_csv(access, "C:/STKReports/MySat_Access1.csv")
 
     print("\n===== STK AUTOMATION COMPLETED =====\n")
+

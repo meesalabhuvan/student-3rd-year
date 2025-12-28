@@ -1,24 +1,5 @@
 """
-Simple STK + Gemini CLI app (no Telegram)
------------------------------------------
-
-What this script does
----------------------
-- Asks you in the terminal to describe an STK scenario.
-- Sends that description to Gemini 2.5 Flash.
-- Gemini returns Python code that should:
-    * Use or simulate STK
-    * Generate reports/screenshots (CSV / PNG) in a temp folder
-- The script runs that generated Python with an STK‑capable interpreter.
-- Finally, it lists the generated files and shows truncated output.
-
-
-Environment variables
----------------------
-- GOOGLE_API_KEY      : Your Google Gemini API key
-- GOOGLE_GEMINI_MODEL : (optional) Model name, default: "gemini-2.5-flash"
-- STK_PYTHON_CMD      : Path to Python that can run STK
-                        (e.g. r"C:\\Python314\\python.exe")
+Simple STK + Gemini 
 """
 
 import os
@@ -28,12 +9,7 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor
 from typing import List, Tuple
 
-from google import genai  # pip install google-genai
-
-
-# ----------------------------
-# Basic configuration
-# ----------------------------
+from google import genai 
 
 # Gemini configuration
 GOOGLE_API_KEY = os.getenv("AIzaSyAbICds9qo1S6cofkXw_zvMOQjwi7NudX", "AIzaSyAbICds9qo1S6cofkXw_zvMOQjwi7NudXY")
@@ -48,11 +24,6 @@ WORKER_POOL = ThreadPoolExecutor(max_workers=2)
 # Logging (prints information to console)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("simple_stk_cli")
-
-
-# ----------------------------
-# Helper functions
-# ----------------------------
 
 def ensure_config_ok() -> None:
     """Check that required environment variables are set."""
@@ -478,3 +449,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

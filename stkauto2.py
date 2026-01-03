@@ -88,5 +88,6 @@ if __name__ == "__main__":
     access = stk.get_access(sat, tgt)
     stk.save_access_csv(access, "C:/STKReports/MySat_Access1.csv")
 
-    print("\n===== STK AUTOMATION COMPLETED =====\n")
+    print("\nSTK_AUTOMATION_COMPLETED\n")
+
 
